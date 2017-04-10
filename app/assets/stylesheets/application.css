@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+form .field, form .actions {
+	display: inline-block;
+}
+
+#results {
+	background-color: #eee;
+}
