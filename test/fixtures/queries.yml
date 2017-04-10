@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kind: 1
+  words: MyString
+  category: MyString
+  send_to_mail: MyString
+  response_status: 1
+  response_error: MyString
+
+two:
+  kind: 1
+  words: MyString
+  category: MyString
+  send_to_mail: MyString
+  response_status: 1
+  response_error: MyString

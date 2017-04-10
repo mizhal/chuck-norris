@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Queries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kind</th>
+      <th>Words</th>
+      <th>Category</th>
+      <th>Send to mail</th>
+      <th>Response status</th>
+      <th>Response error</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @queries.each do |query| %>
+      <tr>
+        <td><%= query.kind %></td>
+        <td><%= query.words %></td>
+        <td><%= query.category %></td>
+        <td><%= query.send_to_mail %></td>
+        <td><%= query.response_status %></td>
+        <td><%= query.response_error %></td>
+        <td><%= link_to 'Show', query %></td>
+        <td><%= link_to 'Edit', edit_query_path(query) %></td>
+        <td><%= link_to 'Destroy', query, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Query', new_query_path %>
