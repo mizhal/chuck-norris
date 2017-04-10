@@ -2,6 +2,7 @@ es:
   ok: "OK"
   query_for: "Búsqueda de"
   query_for_category: "Búsqueda de categoría"
+  nothing_found: "No hemos encontrado nada"
   sent_to_mail : "Enviada al correo"
   chuck_norris_quotes: "Palabra de Chuck Norris"
   services:

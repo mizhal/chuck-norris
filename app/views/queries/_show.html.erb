@@ -26,4 +26,6 @@
     <%= render partial: "result", locals: {result: result} %>
   <% end %>
   </ol>
+<% else %>
+  <%= t "nothing_found" %>
 <% end %>

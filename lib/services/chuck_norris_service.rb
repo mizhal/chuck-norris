@@ -51,7 +51,9 @@ class ChuckNorrisService
 	def get_query query_object
 		entries = do_get_json(QUERY_ENDPOINT + query_object.words, query_object)
 		if entries.any?
-			generate_results(entries["result"], query_object)
+			if entries["total"].to_i > 0
+				generate_results(entries["result"], query_object)
+			end
 		end
 	end
 
@@ -95,8 +97,10 @@ class ChuckNorrisService
 	end
 
 	def generate_results(json_data, query_object)
-		json_data.each do |data|
-			generate_result(data, query_object)
+		if json_data.any?
+			json_data.each do |data|
+				generate_result(data, query_object)
+			end
 		end
 	end
 
