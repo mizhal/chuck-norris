@@ -1,5 +1,5 @@
 class Result < ActiveRecord::Base
 	### RELACIONES
-	belogs_to :query
+	belongs_to :query
 	### FIN: RELACIONES
 end

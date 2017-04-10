@@ -1,0 +1,3 @@
+es:
+  services:
+    unknown_query_kind: "Tipo de consulta desconocido"

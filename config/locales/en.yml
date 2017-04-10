@@ -21,3 +21,5 @@
 
 en:
   hello: "Hello world"
+  services:
+    unknown_query_kind: "Unknown query kind"

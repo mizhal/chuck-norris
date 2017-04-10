@@ -6,7 +6,7 @@ class CreateQueries < ActiveRecord::Migration
       t.string :category
       t.string :send_to_mail
       t.integer :response_status
-      t.string :response_error
+      t.text :response_error
 
       t.timestamps null: false
     end
