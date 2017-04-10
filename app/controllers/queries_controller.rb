@@ -1,4 +1,5 @@
 class QueriesController < ApplicationController
+
   before_action :set_query, only: [:show]
 
   # GET /queries/1
@@ -19,15 +20,13 @@ class QueriesController < ApplicationController
     service = ChuckNorrisService.get_instance
     service.query(@query)
 
-    
-
     respond_to do |format|
       if @query.save
         format.html { redirect_to @query, notice: 'Query was successfully created.' }
-        format.json { render :show, status: :created, location: @query }
+        format.js {render :create}
       else
         format.html { render :new }
-        format.json { render json: @query.errors, status: :unprocessable_entity }
+        format.js { render :create }
       end
     end
   end
