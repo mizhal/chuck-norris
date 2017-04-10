@@ -1,31 +1,29 @@
+
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Kind:</strong>
-  <%= query.kind %>
-</p>
 
-<p>
-  <strong>Words:</strong>
-  <%= query.words %>
+<% if query.query? %>
+  <%=t "query_for" %>: <em><%= query.words %></em>
 </p>
+<% end %>
 
+<% if query.category_kind? %>
 <p>
-  <strong>Category:</strong>
-  <%= query.category %>
+  <%=t "query_for_category" %>: <em><%= query.category %></em>
 </p>
+<% end %>
 
+<% if @query.send_to_mail.present? %>
 <p>
-  <strong>Send to mail:</strong>
-  <%= query.send_to_mail %>
+  <%= t "sent_to_mail" %>: <em><%= query.send_to_mail %></em>
 </p>
+<% end %>
 
-<p>
-  <strong>Response status:</strong>
-  <%= query.response_status %>
-</p>
-
-<p>
-  <strong>Response error:</strong>
-  <%= query.response_error %>
-</p>
+<% if query.results.any? %>
+  <ol>
+  <% query.results.each do |result| %>
+    <%= render partial: "result", locals: {result: result} %>
+  <% end %>
+  </ol>
+<% end %>

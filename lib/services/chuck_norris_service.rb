@@ -35,7 +35,7 @@ class ChuckNorrisService
 	end
 
 	## Listado de categorias que proporciona el servicio
-	def categories
+	def categories(query_object)
 		data = do_get_json(CATEGORIES_ENDPOINT, query_object)
 	end
 

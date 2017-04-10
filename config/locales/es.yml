@@ -1,5 +1,8 @@
 es:
   ok: "OK"
+  query_for: "Búsqueda de"
+  query_for_category: "Búsqueda de categoría"
+  sent_to_mail : "Enviada al correo"
   chuck_norris_quotes: "Palabra de Chuck Norris"
   services:
     unknown_query_kind: "Tipo de consulta desconocido"
@@ -7,6 +10,23 @@ es:
     query: "Palabras"
     category_kind: "Categorias"
     random: "Aleatorio"
+  query_categories:
+    explicit: Explícito
+    dev: Desarrollo
+    movie: Pelis
+    food: Comida
+    celebrity: Celebridades
+    science: Cencia
+    political: Politica
+    sport: Deporte
+    religion: Religion
+    animal: Animales
+    music: Música
+    history: Historia
+    travel: Viajes
+    career: Profesional
+    money: Dinero
+    fashion: Moda
   activerecord:
     models:
       queries:

@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :category %><br>
-    <%= f.text_field :category %>
+    <%= f.select :category, @categories.map{|c| [t("query_categories.#{c}"), c]} %>
   </div>
   <div class="field">
     <%= f.label :send_to_mail %><br>

@@ -10,6 +10,9 @@ class QueriesController < ApplicationController
   # GET /queries/new
   def new
     @query = Query.new
+    service = ChuckNorrisService.get_instance
+
+    @categories = service.categories(@query)
   end
 
   # POST /queries
