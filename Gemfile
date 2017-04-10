@@ -40,8 +40,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'mailcatcher', '0.6.1'
 end
 
 # bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
-

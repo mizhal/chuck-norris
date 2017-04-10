@@ -1,0 +1,23 @@
+<%=t "email_de_su_consulta" %>
+
+<% if @query.query? %>
+  <%=t "query_for" %>: <%= @query.words %>
+<% end %>
+
+<% if @query.category_kind? %>
+  <%=t "query_for_category" %>: <%= @query.category %>
+<% end %>
+
+<% if @query.send_to_mail.present? %>
+  <%= t "sent_to_mail" %>: <%= @query.send_to_mail %>
+<% end %>
+
+==================================================
+
+<% if @query.results.any? %>
+  <% @query.results.each do |result| %>
+  	* <%= simple_format result.value %>
+  <% end %>
+<% else %>
+  <%= t "nothing_found" %>
+<% end %>

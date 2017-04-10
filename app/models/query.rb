@@ -14,4 +14,8 @@ class Query < ActiveRecord::Base
 	validates :words, presence: true, if: Proc.new{|d| d.query?}
 	validates :category, presence: true, if: Proc.new{|d| d.category_kind?}
 	### FIN: VALIDACIONES
+
+	def mail?
+		send_to_mail.present?
+	end
 end

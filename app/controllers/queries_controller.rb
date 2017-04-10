@@ -23,6 +23,10 @@ class QueriesController < ApplicationController
     service = ChuckNorrisService.get_instance
     service.query(@query)
 
+    if @query.mail?
+      QueryMailer.basic(@query).deliver
+    end
+
     respond_to do |format|
       if @query.save
         format.html { redirect_to @query, notice: 'Query was successfully created.' }
