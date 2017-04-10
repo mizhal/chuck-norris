@@ -1,3 +1,20 @@
 es:
+  ok: "OK"
+  chuck_norris_quotes: "Palabra de Chuck Norris"
   services:
     unknown_query_kind: "Tipo de consulta desconocido"
+  query_kinds:
+    query: "Palabras"
+    category_kind: "Categorias"
+    random: "Aleatorio"
+  activerecord:
+    models:
+      queries:
+        one: "Búsqueda"
+        many: "Búsquedas"
+    attributes:
+      query:
+        kind: "Tipo"
+        words: "Palabras"
+        category: "Categoria"
+        send_to_mail: "Enviar al correo"

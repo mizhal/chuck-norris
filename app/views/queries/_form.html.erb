@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :kind %><br>
-    <%= f.number_field :kind %>
+    <%= f.select :kind, Query.kinds.map{|k,v| [t("query_kinds.#{k}"), k]} %><br>
   </div>
   <div class="field">
     <%= f.label :words %><br>
@@ -27,15 +27,7 @@
     <%= f.label :send_to_mail %><br>
     <%= f.text_field :send_to_mail %>
   </div>
-  <div class="field">
-    <%= f.label :response_status %><br>
-    <%= f.number_field :response_status %>
-  </div>
-  <div class="field">
-    <%= f.label :response_error %><br>
-    <%= f.text_field :response_error %>
-  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t("ok") %>
   </div>
 <% end %>

@@ -1,10 +1,24 @@
 class ChuckNorrisService
 
+	### SINGLETON
+	cattr_accessor :singleton
+	def self.get_instance 
+		if ChuckNorrisService.singleton.nil?
+			ChuckNorrisService.singleton = ChuckNorrisService.new
+		end
+		ChuckNorrisService.singleton
+	end
+	### FIN: SINGLETON
+
+	### ENDPOINTS
 	RANDOM_ENDPOINT = "https://api.chucknorris.io/jokes/random"
 	QUERY_ENDPOINT = "https://api.chucknorris.io/jokes/search?query="
 	CATEGORY_ENDPOINT = "https://api.chucknorris.io/jokes/random?category="
 	CATEGORIES_ENDPOINT = "https://api.chucknorris.io/jokes/categories"
+	### FIN: ENDPOINTS
 
+	## Punto principal de entrada al service, realiza las consultas en funcion
+	# de los datos del objeto de busqueda (tipo, parametros, etc)
 	def query query_object
 		case query_object.kind
 			when "random"
@@ -19,6 +33,15 @@ class ChuckNorrisService
 
 		query_object
 	end
+
+	## Listado de categorias que proporciona el servicio
+	def categories
+		data = do_get_json(CATEGORIES_ENDPOINT, query_object)
+	end
+
+	private
+
+	### TIPOS DE CONSULTA
 
 	def get_random query_object
 		single_entry = do_get_json(RANDOM_ENDPOINT, query_object)
@@ -43,6 +66,8 @@ class ChuckNorrisService
 		query_object.response_status = 404
 		query_object.response_error = I18n.t("services.unknown_query_kind")
 	end
+
+	### FIN: TIPOS DE CONSULTA
 
 	### AUXILIARES
 
